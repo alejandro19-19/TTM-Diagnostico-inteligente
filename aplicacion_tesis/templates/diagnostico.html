@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="mb-4" style="text-align: center; font-weight: bold;">Resultado de la predicción</h1>
+      
+      <style>
+        .border-black table,
+        .border-black th,
+        .border-black td {
+            border-color: black !important;
+        }
+        .table th {
+          text-align: center !important;
+        }
+      </style>
+      
+      <form action="{% url 'integrar_diagnostico' %}" method="POST" id="diagnosticoForm">
+        {% csrf_token %}
+        <table class="table table-bordered text-center border-black">
+          <thead>
+            <tr>
+              <th style="font-weight: bold;">Subtipo de TTM</th>
+              <th style="font-weight: bold;">Probabilidad de Subtipo de TTM</th>
+              <th style="font-weight: bold;">¿Confirma la predicción hecha por el modelo?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center align-middle" style="font-weight: bold;">Mialgia</td>
+              <td class="{% if mialgia < 50 %}bg-success{% elif mialgia >= 50 %}bg-danger{% endif %}">
+                <div class="row">
+                  <div class="col text-center">
+                    <h3>{{mialgia}}%</h3>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-success">
+                    <input type="radio" name="mialgia_opcion" value="si" autocomplete="off" required> Sí
+                  </label>
+                  <label class="btn btn-outline-danger">
+                    <input type="radio" name="mialgia_opcion" value="no" autocomplete="off"> No
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center align-middle" style="font-weight: bold;">dMiofacial</td>
+              <td class="{% if dMiofacial < 50 %}bg-success{% elif dMiofacial >= 50 %}bg-danger{% endif %}">
+                <div class="row">
+                  <div class="col text-center">
+                    <h3>{{dMiofacial}}%</h3>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-success">
+                    <input type="radio" name="dMiofacial_opcion" value="si" autocomplete="off" required> Sí
+                  </label>
+                  <label class="btn btn-outline-danger">
+                    <input type="radio" name="dMiofacial_opcion" value="no" autocomplete="off"> No
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center align-middle" style="font-weight: bold;">Artralgia izquierda</td>
+              <td class="{% if artralgiaI < 50 %}bg-success{% elif artralgiaI >= 50 %}bg-danger{% endif %}">
+                <div class="row">
+                  <div class="col text-center">
+                    <h3>{{artralgiaI}}%</h3>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-success">
+                    <input type="radio" name="artralgiaI_opcion" value="si" autocomplete="off" required> Sí
+                  </label>
+                  <label class="btn btn-outline-danger">
+                    <input type="radio" name="artralgiaI_opcion" value="no" autocomplete="off"> No
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center align-middle" style="font-weight: bold;">Artralgia derecha</td>
+              <td class="{% if artralgiaD < 50 %}bg-success{% elif artralgiaD >= 50 %}bg-danger{% endif %}">
+                <div class="row">
+                  <div class="col text-center">
+                    <h3>{{artralgiaD}}%</h3>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-success">
+                    <input type="radio" name="artralgiaD_opcion" value="si" autocomplete="off" required> Sí
+                  </label>
+                  <label class="btn btn-outline-danger">
+                    <input type="radio" name="artralgiaD_opcion" value="no" autocomplete="off"> No
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center align-middle" style="font-weight: bold;">Desplazamiento del disco izquierdo con reducción</td>
+              <td class="{% if cReduccionI < 50 %}bg-success{% elif cReduccionI >= 50 %}bg-danger{% endif %}">
+                <div class="row">
+                  <div class="col text-center">
+                    <h3>{{cReduccionI}}%</h3>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-success">
+                    <input type="radio" name="cReduccionI_opcion" value="si" autocomplete="off" required> Sí
+                  </label>
+                  <label class="btn btn-outline-danger">
+                    <input type="radio" name="cReduccionI_opcion" value="no" autocomplete="off"> No
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center align-middle" style="font-weight: bold;">Desplazamiento del disco derecho con reducción</td>
+              <td class="{% if cReduccionD < 50 %}bg-success{% elif cReduccionD >= 50 %}bg-danger{% endif %}">
+                <div class="row">
+                  <div class="col text-center">
+                    <h3>{{cReduccionD}}%</h3>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-success">
+                    <input type="radio" name="cReduccionD_opcion" value="si" autocomplete="off" required> Sí
+                  </label>
+                  <label class="btn btn-outline-danger">
+                    <input type="radio" name="cReduccionD_opcion" value="no" autocomplete="off"> No
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <input type="hidden" name="datos_con_pipeline" value="{{ datos_json }}">
+        <input type="hidden" name="mialgia" value="{{ mialgia }}">
+        <input type="hidden" name="dMiofacial" value="{{ dMiofacial }}">
+        <input type="hidden" name="artralgiaI" value="{{ artralgiaI }}">
+        <input type="hidden" name="artralgiaD" value="{{ artralgiaD }}">
+        <input type="hidden" name="cReduccionI" value="{{ cReduccionI }}">
+        <input type="hidden" name="cReduccionD" value="{{ cReduccionD }}">
+        
+        <div class="d-flex justify-content-end">
+          <button type="submit" id="enviarBtn" class="btn btn-primary" disabled>Subir diagnostico</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+    const radios = document.querySelectorAll('input[type="radio"]');
+    
+    radios.forEach(radio => {
+      radio.addEventListener('change', function() {
+        const parentLabel = radio.closest('label');
+        const btnGroup = parentLabel.closest('.btn-group-toggle');
+        const labels = btnGroup.querySelectorAll('label');
+        labels.forEach(label => label.classList.remove('active'));
+        parentLabel.classList.add('active');
+      });
+    });
+
+    const form = document.getElementById('diagnosticoForm');
+    const enviarBtn = document.getElementById('enviarBtn');
+    
+    form.addEventListener('change', function() {
+      const radiosChecked = document.querySelectorAll('input[type="radio"]:checked').length;
+      const totalRadiosGroups = 6;
+      
+      if (radiosChecked === totalRadiosGroups) {
+        enviarBtn.disabled = false;
+      } else {
+        enviarBtn.disabled = true;
+      }
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,33 @@
+<div class="form-group">
+  <h5>3. Patrón de Apertura (Seleccione uno) </h5>
+  
+  <div class="btn-group-toggle" data-toggle="buttons">
+    <div class="row">
+      {% for checkbox in form.patron_apertura %}
+        <div class="col-xs-6 col-sm-4">
+          <label class="btn btn-outline-primary btn-block">
+            {{ checkbox.tag }} {{ checkbox.choice_label }}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <h5 style="text-align: center; font-weight: bold;">
+    {{ form.lado_apertura.label_tag}}
+  </h5>
+  
+  <div class="btn-group-toggle" data-toggle="buttons">
+    <div class="row">
+      {% for checkbox in form.lado_apertura %}
+        <div class="col-xs-6 col-sm-4">
+          <label class="btn btn-outline-primary btn-block">
+            {{ checkbox.tag }} {{ checkbox.choice_label }}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

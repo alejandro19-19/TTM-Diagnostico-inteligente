@@ -1,0 +1,114 @@
+<table class="table table-bordered text-center border-black">
+  <thead>
+      <tr>
+          <th>LADO IZQUIERDO</th>
+          <th>Bloqueo</th>
+          <th>Paciente</th>
+          <th>Evaluador</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td class="text-center align-middle" style="font-weight: bold;">Mientras Abre</td>
+          <td>
+            <div class="form-group">
+              <div class="btn-group-toggle" data-toggle="buttons">
+                <div class="row">
+                  {% for checkbox in form.mientras_abre_bloqueo_izquierdo_8 %}
+                    
+                      <label class="btn btn-block">
+                        {{ checkbox.tag }} {{ checkbox.choice_label }}
+                      </label>
+                    
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="form-group">
+              <div class="btn-group-toggle" data-toggle="buttons">
+                <div class="row">
+                  {% for checkbox in form.mientras_abre_paciente_izquierdo_8 %}
+                    
+                      <label class="btn btn-block">
+                        {{ checkbox.tag }} {{ checkbox.choice_label }}
+                      </label>
+                    
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="form-group">
+              <div class="btn-group-toggle" data-toggle="buttons">
+                <div class="row">
+                  {% for checkbox in form.mientras_abre_evaluador_izquierdo_8 %}
+                    
+                      <label class="btn btn-block">
+                        {{ checkbox.tag }} {{ checkbox.choice_label }}
+                      </label>
+                    
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </td>
+
+      </tr>
+      <tr>
+        <td class="text-center align-middle" style="font-weight: bold;">Posición Max. Apertura</td>
+        <td>
+          <div class="form-group">
+            <div class="btn-group-toggle" data-toggle="buttons">
+              <div class="row">
+                {% for checkbox in form.posicion_max_apertura_bloqueo_izquierdo_8 %}
+                  
+                    <label class="btn btn-block">
+                      {{ checkbox.tag }} {{ checkbox.choice_label }}
+                    </label>
+                  
+                {% endfor %}
+              </div>
+            </div>
+          </div>	
+        </td>
+
+        <td>
+          <div class="form-group">
+            <div class="btn-group-toggle" data-toggle="buttons">
+              <div class="row">
+                {% for checkbox in form.posicion_max_apertura_paciente_izquierdo_8 %}
+                  
+                    <label class="btn btn-block">
+                      {{ checkbox.tag }} {{ checkbox.choice_label }}
+                    </label>
+                  
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div class="form-group">
+            <div class="btn-group-toggle" data-toggle="buttons">
+              <div class="row">
+                {% for checkbox in form.posicion_max_apertura_evaluador_izquierdo_8 %}
+                  
+                    <label class="btn btn-block">
+                      {{ checkbox.tag }} {{ checkbox.choice_label }}
+                    </label>
+                  
+                {% endfor %}
+              </div>
+            </div>
+          </div>	
+        </td>
+
+      </tr>
+  </tbody>
+</table>

@@ -1,0 +1,29 @@
+<h5>5. Movimientos Laterales y Protrusión </h5>
+
+
+			<div class="row">
+				<div class="col-xs-6 col-sm-4">
+					<div class="form-group">
+						<label>{{ form.lateralidad_derecha.label }}</label>
+						{{ form.lateralidad_derecha }}
+					</div>
+				</div>
+		
+				<div class="col-xs-6 col-sm-4">
+					<div class="form-group">
+						<label>{{ form.lateralidad_izquierda.label }}</label>
+						{{ form.lateralidad_izquierda }}
+					</div>
+				</div>
+				
+				<div class="col-xs-6 col-sm-4">
+					<div class="form-group">
+						<label>{{ form.protusion.label }}</label>
+						{{ form.protusion }}
+					</div>
+				</div>
+
+			</div>
+
+      {% include 'formulario/formularios_quinta_parte/derecha_formularios.html' %}
+      {% include 'formulario/formularios_quinta_parte/izquierda_formularios.html' %}

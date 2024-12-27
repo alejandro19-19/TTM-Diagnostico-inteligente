@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<style>
+  .jumbotron {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+	.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 576px) {
+    .form-container {
+      width: 90%;
+    }
+  }
+
+	.jumbotron {
+  	overflow-x: auto;
+	}
+
+</style>
+
+
+<div class='container'>
+	<div class='jumbotron'>
+		<h1 class="text-center align-middle mb-4">Ingrese los datos para realizar el diagnóstico</h1>
+		<form method="POST" action="/diagnostico/" class="form-container">
+			{% csrf_token %}
+			
+			{% include 'formulario/primera_parte.html' %}
+			{% include 'formulario/segunda_parte.html' %}
+			{% include 'formulario/tercera_parte.html' %}
+			{% include 'formulario/cuarta_parte.html' %}
+			{% include 'formulario/quinta_parte.html' %}
+			{% include 'formulario/sexta_parte.html' %}
+			{% include 'formulario/septima_parte.html' %}
+			{% include 'formulario/octava_parte.html' %}
+			{% include 'formulario/novena_parte.html' %}
+			{% include 'formulario/decima_parte.html' %}
+			
+			<div class="btn-container">
+				<button type="submit" class="btn btn-primary">Diagnosticar</button>
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+<style>
+	@media (max-width: 576px) {
+		.jumbotron {
+			padding: 1rem 0.5rem;
+		}
+		
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		.btn {
+			width: 100%;
+		}
+	}
+</style>
+
+	<div class="container">
+		<div class="jumbotron text-center align-middle">
+			{% if registered %}
+				<h1>¡Te has registrado con éxito!</h1>
+			{% else %}
+				<h1 class="mb-4">¡Regístrate aquí!</h1>
+				<form enctype="multipart/form-data" method="POST" class="needs-validation" novalidate>
+					{% csrf_token %}
+						
+					<div class="mb-3">
+						<label for="username" class="form-label">Nombre de usuario:</label>
+						<div class="input-group">
+							<div class="col-12 col-md-8 mx-auto">
+								{{ user_form.username }}
+							</div>
+						</div>
+					</div>
+						
+					<div class="mb-3">
+						<label for="email" class="form-label">Correo electrónico:</label>
+						<div class="input-group">
+							<div class="col-12 col-md-8 mx-auto">
+								{{ user_form.email }}
+							</div>
+						</div>
+					</div>
+
+					<div class="mb-3">
+						<label for="password" class="form-label">Contraseña:</label>
+						<div class="input-group">
+							<div class="col-12 col-md-8 mx-auto">
+								{{ user_form.password }}
+							</div>
+						</div>
+					</div>
+						
+					<div class="text-center">
+						<input type="submit" value="Registrarse" class="btn btn-primary">
+					</div>
+				</form>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

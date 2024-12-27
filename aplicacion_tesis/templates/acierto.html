@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block body_block %}
+  <div class="container mt-5">
+    <div class="jumbotron">
+      <div class="jumbotron text-center p-4 bg-light">
+        <h1 class="mb-4 font-weight-bold">{{ informacion }}</h1>
+      </div>
+
+      {% if mialgia_puntaje or dMiofacial_puntaje or artralgiaI_puntaje or artralgiaD_puntaje or cReduccionI_puntaje or cReduccionD_puntaje %}
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <table class="table table-bordered table-striped" style="border: 1px solid black;">
+              <thead class="thead-light">
+                <tr>
+                  <th style="border: 1px solid black;">Subtipo de TTM</th>
+                  <th style="border: 1px solid black;">Puntaje (AUC)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% if mialgia_puntaje is not None %}
+                  <tr>
+                    <td style="border: 1px solid black;"><strong>Mialgia</strong></td>
+                    <td style="border: 1px solid black;">{{ mialgia_puntaje }}</td>
+                  </tr>
+                {% endif %}
+                {% if dMiofacial_puntaje is not None %}
+                  <tr>
+                    <td style="border: 1px solid black;"><strong>Dolor miofascial con patrón referido</strong></td>
+                    <td style="border: 1px solid black;">{{ dMiofacial_puntaje }}</td>
+                  </tr>
+                {% endif %}
+                {% if artralgiaI_puntaje is not None %}
+                  <tr>
+                    <td style="border: 1px solid black;"><strong>Artralgia de la ATM Izquierda</strong></td>
+                    <td style="border: 1px solid black;">{{ artralgiaI_puntaje }}</td>
+                  </tr>
+                {% endif %}
+                {% if artralgiaD_puntaje is not None %}
+                  <tr>
+                    <td style="border: 1px solid black;"><strong>Artralgia de la ATM Derecha</strong></td>
+                    <td style="border: 1px solid black;">{{ artralgiaD_puntaje }}</td>
+                  </tr>
+                {% endif %}
+                {% if cReduccionI_puntaje is not None %}
+                  <tr>
+                    <td style="border: 1px solid black;"><strong>Desplazamiento del disco con reducción en la ATM Izquierda</strong></td>
+                    <td style="border: 1px solid black;">{{ cReduccionI_puntaje }}</td>
+                  </tr>
+                {% endif %}
+                {% if cReduccionD_puntaje is not None %}
+                  <tr>
+                    <td style="border: 1px solid black;"><strong>Desplazamiento del disco con reducción en la ATM Derecha</strong></td>
+                    <td style="border: 1px solid black;">{{ cReduccionD_puntaje }}</td>
+                  </tr>
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

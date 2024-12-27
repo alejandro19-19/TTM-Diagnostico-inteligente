@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<style>
+  @media (max-width: 576px) {
+    .password-label {
+      text-align: center;
+      display: block;
+    }
+  }
+
+  @media (min-width: 766px) {
+    .form-group {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .form-control {
+      flex: none;
+      width: 100%;
+    }
+    .password-label {
+      margin-left: 70px;
+    }
+  }
+</style>
+
+<div class="container">
+  <div class="jumbotron text-center align-middle">
+    <h1 class="mb-4">Iniciar sesión</h1>
+
+    <form method="post" action="{% url 'user_login' %}" class="form-inline justify-content-center">
+      {% csrf_token %}
+
+      <div class="form-group col-12 col-md-6 mb-2 mx-auto">
+        <label for="username" class="mr-2">Nombre de usuario:</label>
+        <input type="text" name="username" class="form-control" required>
+      </div>
+
+      <div class="form-group col-12 col-md-6 mb-2 mx-auto">
+        <label for="password" class="mr-2 password-label">Contraseña:</label>
+        <input type="password" name="password" class="form-control" required>
+      </div>
+
+      <div class="row">
+        <div class="col text-right">
+          <input type="submit" value="Entrar" class="btn btn-primary" style="margin-top: 10px;">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

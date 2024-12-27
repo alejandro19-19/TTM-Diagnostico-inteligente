@@ -1,0 +1,148 @@
+<table class="table table-bordered text-center border-black">
+  <thead>
+      <tr>
+          <th>LADO DERECHO</th>
+          <th>Apertura</th>
+          <th>Cierre</th>
+          <th>Paciente</th>
+          <th>Dolor c/Clic</th>
+          <th>Dolor Familiar</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td class="text-center align-middle" style="font-weight: bold;">Clic</td>
+          <td>
+            <div class="form-group">
+              <div class="btn-group-toggle" data-toggle="buttons">
+                <div class="row">
+                  {% for checkbox in form.click_apertura_derecho_6 %}
+                    
+                      <label class="btn btn-block">
+                        {{ checkbox.tag }} {{ checkbox.choice_label }}
+                      </label>
+                    
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="form-group">
+              <div class="btn-group-toggle" data-toggle="buttons">
+                <div class="row">
+                  {% for checkbox in form.click_cierre_derecho_6 %}
+                    
+                      <label class="btn btn-block">
+                        {{ checkbox.tag }} {{ checkbox.choice_label }}
+                      </label>
+                    
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="form-group">
+              <div class="btn-group-toggle" data-toggle="buttons">
+                <div class="row">
+                  {% for checkbox in form.click_paciente_derecho_6 %}
+                    
+                      <label class="btn btn-block">
+                        {{ checkbox.tag }} {{ checkbox.choice_label }}
+                      </label>
+                    
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="form-group">
+              <div class="btn-group-toggle" data-toggle="buttons">
+                <div class="row">
+                  {% for checkbox in form.click_dolor_derecho_6 %}
+                    
+                      <label class="btn btn-block">
+                        {{ checkbox.tag }} {{ checkbox.choice_label }}
+                      </label>
+                    
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="form-group">
+              <div class="btn-group-toggle" data-toggle="buttons">
+                <div class="row">
+                  {% for checkbox in form.click_dolor_familiar_derecho_6 %}
+                    
+                      <label class="btn btn-block">
+                        {{ checkbox.tag }} {{ checkbox.choice_label }}
+                      </label>
+                    
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </td>
+
+      </tr>
+      <tr>
+        <td class="text-center align-middle" style="font-weight: bold;">Crepitación</td>
+        <td>
+          <div class="form-group">
+            <div class="btn-group-toggle" data-toggle="buttons">
+              <div class="row">
+                {% for checkbox in form.crepitacion_apertura_derecho_6 %}
+                  
+                    <label class="btn btn-block">
+                      {{ checkbox.tag }} {{ checkbox.choice_label }}
+                    </label>
+                  
+                {% endfor %}
+              </div>
+            </div>
+          </div>	
+        </td>
+
+        <td>
+          <div class="form-group">
+            <div class="btn-group-toggle" data-toggle="buttons">
+              <div class="row">
+                {% for checkbox in form.crepitacion_cierre_derecho_6 %}
+                  
+                    <label class="btn btn-block">
+                      {{ checkbox.tag }} {{ checkbox.choice_label }}
+                    </label>
+                  
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div class="form-group">
+            <div class="btn-group-toggle" data-toggle="buttons">
+              <div class="row">
+                {% for checkbox in form.crepitacion_paciente_derecho_6 %}
+                  
+                    <label class="btn btn-block">
+                      {{ checkbox.tag }} {{ checkbox.choice_label }}
+                    </label>
+                  
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </td>
+
+      </tr>
+  </tbody>
+</table>

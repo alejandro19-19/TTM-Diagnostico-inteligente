@@ -1,0 +1,74 @@
+<div class="form-group">
+  <h5>1a. Localización del dolor: En los últimos 30 días (Seleccionar todas las que apliquen)</h5>
+  
+  <h5 style="text-align: center; font-weight: bold;">
+    {{ form.localizacion_dolor_derecho.label_tag}}
+  </h5>
+
+  <div class="btn-group-toggle" data-toggle="buttons">
+    <div class="row">
+      {% for checkbox in form.localizacion_dolor_derecho %}
+        <div class="col-xs-6 col-sm-4">
+          <label class="btn btn-outline-primary btn-block">
+            {{ checkbox.tag }} {{ checkbox.choice_label }}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <h5 style="text-align: center; font-weight: bold;">
+    {{ form.localizacion_dolor_izquierdo.label_tag}}
+  </h5>
+  <div class="btn-group-toggle" data-toggle="buttons">
+    <div class="row">
+      {% for checkbox in form.localizacion_dolor_izquierdo %}
+        <div class="col-xs-6 col-sm-4">
+          <label class="btn btn-outline-primary btn-block">
+            {{ checkbox.tag }} {{ checkbox.choice_label }}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <h5>1b. Localización de la cefalea: En los últimos 30 días (Seleccione todas las que apliquen)</h5>
+  
+  <h5 style="text-align: center; font-weight: bold;">
+    {{ form.localizacion_cefalea_derecho.label_tag}}
+  </h5>
+  
+  <div class="btn-group-toggle" data-toggle="buttons">
+    <div class="row">
+      {% for checkbox in form.localizacion_cefalea_derecho %}
+        <div class="col-xs-6 col-sm-4">
+          <label class="btn btn-outline-primary btn-block">
+            {{ checkbox.tag }} {{ checkbox.choice_label }}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <h5 style="text-align: center; font-weight: bold;">
+    {{ form.localizacion_cefalea_izquierdo.label_tag}}
+  </h5>
+  
+  <div class="btn-group-toggle" data-toggle="buttons">
+    <div class="row">
+      {% for checkbox in form.localizacion_cefalea_izquierdo %}
+        <div class="col-xs-6 col-sm-4">
+          <label class="btn btn-outline-primary btn-block">
+            {{ checkbox.tag }} {{ checkbox.choice_label }}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
